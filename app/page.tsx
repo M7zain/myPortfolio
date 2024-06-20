@@ -1,4 +1,5 @@
 import About from "@/components/Sections/About";
+import Footer from "@/components/Sections/Footer";
 import Hero from "@/components/Sections/Hero";
 import Projects from "@/components/Sections/Projects";
 import { FloatingNav } from "@/components/ui/floating-navbar";
@@ -36,6 +37,7 @@ export default function Home() {
           <Hero/> 
           <About/>
           <Projects/>
+          <Footer/>
       </div>
     
    </main>
