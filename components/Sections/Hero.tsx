@@ -11,16 +11,16 @@ const Hero = () => {
   const phrase = "Transforming Concepts into Seamless"
 
   return (
-    <div className='pb-20 md:pt-32'>
+    <div id="home" className='pb-20 md:pt-32'>
       {/* Light beams */}
       <Spotlight className='top-96 left-10 md:-left-34 md:top-48 h-screen' fill='#00B4D8' />
       <Spotlight className='top-10 left-full h-screen md:h-[80vh] md:w-[50vw]' fill='white' />
       <Spotlight className='top-10 left-30 md:top-20 md:left-80 h-screen md:h-[80vh] md:w-[50vw]' fill='#0077B6' />
 
       {/* Grid background */}
-      <div className="h-[50rem] w-full dark:bg-black-100 bg-white dark:bg-grid-white/[0.1] bg-grid-black/[0.1] relative flex items-center justify-center">
+      <div className="h-[50rem] w-full dark:bg-black-100 bg-slate-100 dark:bg-grid-white/[0.1] bg-grid-black/[0.1] relative flex items-center justify-center">
         {/* Radial gradient for the container to give a faded look */}
-        <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black-100 bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_1%,black)]" />
+        <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black-100 bg-slate-100 [mask-image:radial-gradient(ellipse_at_center,transparent_1%,black)]" />
 
         {/* Hero */}
         <div className='flex flex-col items-center justify-center'>
@@ -64,7 +64,7 @@ const Hero = () => {
           <div className='mt-10'>
             <Button
               borderRadius="1.75rem"
-              className=" bg-white dark:bg-black-100 text-white dark:text-white border-neutral-200 dark:border-slate-800"
+              className=" bg-white dark:bg-black-100 text-black dark:text-white border-neutral-200 dark:border-slate-800"
             >
               Show My Work
             </Button>
