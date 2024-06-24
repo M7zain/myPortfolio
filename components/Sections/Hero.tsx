@@ -36,7 +36,7 @@ const Hero = () => {
               {/* Circle */}
               <div className="absolute w-64 h-64 rounded-full bg-white blur-2xl z-10 left-5 top-10"></div>
               {/* Image */}
-              <img src={profile.src} alt="me" className="absolute w-full h-auto z-20 transform -top-1/3" />
+              <img src={profile.src} alt="me" className="absolute w-full h-auto z-20 transform sm:left-5 -top-1/3" />
               {/* Square */}
               <div className="absolute w-96 h-24 bg-berry-300 blur-lg z-30 top-64 -left-8"></div>
             </div>
