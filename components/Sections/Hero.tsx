@@ -7,6 +7,7 @@ import { TextGenerateEffect } from '../ui/text-generate-effect'
 import { Button } from '../ui/moving-border'
 
 const Hero = () => {
+  
   const word = ["programmer", "Computer-Engineer", "Designer", "Front-end-developer"]
   const phrase = "Transforming Concepts into Seamless"
 
