@@ -51,10 +51,10 @@ export const gridItems = [
 
   {
     id: 5,
-    title: "Currently building a JS Animation library",
+    title: "Currently building a VR Museum",
     description: "The Inside Scoop",
     className: "md:col-span-3 md:row-span-2 col-span-6  row-span-4",
-    imgClassName: "absolute right-0 bottom-0 md:w-96 w-full object-cover  ",
+    imgClassName: " w-full h-full object-cover object-center   ",
     titleClassName: "justify-center md:justify-start lg:justify-center col-span-6  row-span-4",
     img: "/museum.png",
     spareImg: "",
