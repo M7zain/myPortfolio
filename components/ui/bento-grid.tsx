@@ -145,26 +145,26 @@ export const BentoGridItem = ({
               {/* tech stack lists */}
               <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
                 {leftLists.map((item, i) => (
-                  <span
+                  <div
                     key={i}
-                    className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
-                    lg:opacity-100 rounded-lg text-center bg-[#10132E]"
+                    className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-100 
+                    rounded-lg text-center bg-[#ffffff]"
                   >
                     <img src={item} className="max-w-10 max-h-10" />
-                  </span>
+                  </div>
                 ))}
-                <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-[#10132E]"></span>
+                <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-[#ffffff]"></span>
               </div>
               <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
-                <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-[#10132E]"></span>
-                {rightLists.map((item, i) => (
+                <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-[#ffffff]"></span>
+                {leftLists.map((item, i) => (
                   <span
                     key={i}
-                    className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
-                    lg:opacity-100 rounded-lg text-center bg-[#10132E]"
+                    className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-100 
+                    rounded-lg text-center bg-[#ffffff]"
                   >
-                    {item}
-                  </span>
+                    <img src={item} className="max-w-10 max-h-10" />
+                    </span>
                 ))}
               </div>
             </div>
