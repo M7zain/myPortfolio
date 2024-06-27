@@ -21,22 +21,22 @@ const Projects = () => {
             title={project.title}
             href={project.link}
           >
-            <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem]">
+            <div className="flex flex-1 basis-full flex-col p-2 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem]">
            
               {/* image */}
-              <div className="relative overflow-hidden flex flex-1 items-end w-full rounded-lg mt-4 bg-gradient-to-br from-berry-200 via-purple-500 to-blue-500" >
+              <div className="relative overflow-hidden flex  items-end justify-center w-full rounded-lg mt-4 bg-gradient-to-br from-berry-200 via-purple-500 to-blue-500" >
                   
-                  <div className='rotate-12 rounded-2xl relative overflow-hidden w-full top-7' >
+                  <div className='rotate-6 rounded-2xl relative overflow-hidden top-6' >
                    
                    <img src={project.img} 
                        alt={project.title}
-                        />
+                       className='object-cover  w-64 h-40'/>
                   
                   </div>
              
                </div>
              
-              <div className='mt-10 text-start '>
+              <div className='mt-4 text-start '>
                   <h3 className="max-w-xs font-bold text-base text-slate-100">
                       {project.title}
                   </h3>
