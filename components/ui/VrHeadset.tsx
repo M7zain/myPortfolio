@@ -55,7 +55,7 @@ const VrHeadset: React.FC = () => {
         // Add OrbitControls
         controls.current = new OrbitControls(camera, renderer.domElement);
         controls.current.enableDamping = true; // optional smooth damping of rotation
-        controls.current.rotateSpeed = 0.5; // adjust rotation speed
+        controls.current.rotateSpeed = 0.2; // adjust rotation speed
 
         // Animation loop
         const animate = () => {
