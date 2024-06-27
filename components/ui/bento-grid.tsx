@@ -5,7 +5,7 @@ import { IoCopyOutline } from "react-icons/io5";
 // Also install this npm i --save-dev @types/react-lottie
 import { cn } from "@/lib/utils";
 import { BackgroundGradientAnimation } from "./GradientBg";
-import animationData from "@/data/confetti.json";
+
 import MagicButton from "./MagicButton";
 
 export const BentoGrid = ({
@@ -54,7 +54,7 @@ export const BentoGridItem = ({
   const defaultOptions = {
     loop: copied,
     autoplay: copied,
-    animationData: animationData,
+  
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
     },

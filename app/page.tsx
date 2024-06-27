@@ -10,6 +10,11 @@ import { FloatingNav } from "@/components/ui/floating-navbar";
 export default function Home() {
   const navItems = [
     {
+      name: "Home",
+      link: "#home",
+   
+    },
+    {
       name: "About",
       link: "#about",
    
