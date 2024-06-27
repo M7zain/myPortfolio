@@ -1,7 +1,7 @@
 // VrHeadset.tsx
 import React, { useRef, useEffect } from 'react';
 import * as THREE from 'three';
-import { OBJLoader } from 'three-stdlib';
+import { FBXLoader } from 'three-stdlib';
 
 const VrHeadset: React.FC = () => {
   const mountRef = useRef<HTMLDivElement | null>(null);
@@ -20,25 +20,28 @@ const VrHeadset: React.FC = () => {
     renderer.setClearColor(0x000000, 0); // Set clear color to black with 0 opacity
     currentMount.appendChild(renderer.domElement);
 
-    // Load the OBJ model
-    const loader = new OBJLoader();
+    // Load the FBX model
+    const loader = new FBXLoader();
     loader.load(
-      '/quest.obj', // Replace with the path to your OBJ file
-      (obj) => {
+      '/quest.fbx', // Replace with the path to your FBX file
+      (fbx) => {
+        // Scale the object to a manageable size
+        fbx.scale.set(0.01, 0.01, 0.01);
+
         // Apply black material to the model
-        obj.traverse((child) => {
+        fbx.traverse((child) => {
           if ((child as THREE.Mesh).isMesh) {
             (child as THREE.Mesh).material = new THREE.MeshBasicMaterial({ color: 0x000000 });
           }
         });
-        scene.add(obj);
-        obj.position.set(0, 0, 0);
+        scene.add(fbx);
+        fbx.position.set(0, 0, 0);
 
         // Animation loop
         const animate = () => {
           requestAnimationFrame(animate);
-          obj.rotation.x += 0.01;
-          obj.rotation.y += 0.01;
+          fbx.rotation.x += 0.01;
+          fbx.rotation.y += 0.01;
           renderer.render(scene, camera);
         };
         animate();
@@ -52,14 +55,27 @@ const VrHeadset: React.FC = () => {
     );
 
     camera.position.z = 5;
+    camera.near = 0.1; // Adjust the near clipping plane
+    camera.far = 1000; // Adjust the far clipping plane
+    camera.updateProjectionMatrix(); // Update the projection matrix
+
+    // Resize handling
+    const handleResize = () => {
+      camera.aspect = currentMount.clientWidth / currentMount.clientHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(currentMount.clientWidth, currentMount.clientHeight);
+    };
+
+    window.addEventListener('resize', handleResize);
 
     // Cleanup on component unmount
     return () => {
+      window.removeEventListener('resize', handleResize);
       currentMount.removeChild(renderer.domElement);
     };
   }, []);
 
-  return <div ref={mountRef} style={{ width: '100%', height: '100px' }} />;
+  return <div ref={mountRef} style={{ width: '100%', height: '150px' }} />;
 };
 
 export default VrHeadset;
