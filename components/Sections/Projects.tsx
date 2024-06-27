@@ -11,7 +11,7 @@ const Projects = () => {
   }, []);
 
   return (
-    <section className='flex flex-col text-center justify-center items-center pt-20' id='projects'>
+    <section className='flex flex-col text-center justify-center items-center pt-20 ' id='projects'>
         <h2 className='text-3xl font-bold dark:text-white uppercase'> a selection of  <span className='text-berry'>many projects</span> </h2>
        
       
@@ -26,7 +26,7 @@ const Projects = () => {
               {/* image */}
               <div className="relative overflow-hidden flex  items-end justify-center w-full rounded-lg mt-4 bg-gradient-to-br from-berry-200 via-purple-500 to-blue-500" >
                   
-                  <div className={`rotate-6 rounded-2xl relative overflow-hidden top-6`} >
+                  <div className={`rotate-6 rounded-lg relative overflow-hidden top-6`} >
                    
                    <img src={project.img} 
                        alt={project.title}

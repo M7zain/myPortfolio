@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { BackgroundGradientAnimation } from "./GradientBg";
 
 import MagicButton from "./MagicButton";
+import VrHeadset from "./VrHeadset";
 
 export const BentoGrid = ({
   className,
@@ -118,7 +119,8 @@ export const BentoGridItem = ({
               <p className="font-sans text-lg lg:text-3xl max-w-96 font-bold z-10">
                 {title}
               </p>
-              <img src={img} alt={img} className="max-w-64" />
+              {/* <img src={img} alt={img} className="max-w-64" /> */}
+              <VrHeadset/>
             </div>
           )}
 
