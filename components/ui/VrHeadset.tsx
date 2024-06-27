@@ -1,6 +1,7 @@
 // VrHeadset.tsx
 import React, { useRef, useEffect } from 'react';
 import * as THREE from 'three';
+import { OBJLoader } from 'three-stdlib';
 
 const VrHeadset: React.FC = () => {
   const mountRef = useRef<HTMLDivElement | null>(null);
@@ -19,22 +20,38 @@ const VrHeadset: React.FC = () => {
     renderer.setClearColor(0x000000, 0); // Set clear color to black with 0 opacity
     currentMount.appendChild(renderer.domElement);
 
-    // Add VR headset model (replace with your model)
-    const geometry = new THREE.BoxGeometry(1, 1, 1); // Temporary geometry
-    const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 }); // Temporary material
-    const vrHeadset = new THREE.Mesh(geometry, material);
-    scene.add(vrHeadset);
+    // Load the OBJ model
+    const loader = new OBJLoader();
+    loader.load(
+      '/quest.obj', // Replace with the path to your OBJ file
+      (obj) => {
+        // Apply black material to the model
+        obj.traverse((child) => {
+          if ((child as THREE.Mesh).isMesh) {
+            (child as THREE.Mesh).material = new THREE.MeshBasicMaterial({ color: 0x000000 });
+          }
+        });
+        scene.add(obj);
+        obj.position.set(0, 0, 0);
+
+        // Animation loop
+        const animate = () => {
+          requestAnimationFrame(animate);
+          obj.rotation.x += 0.01;
+          obj.rotation.y += 0.01;
+          renderer.render(scene, camera);
+        };
+        animate();
+      },
+      (xhr) => {
+        console.log((xhr.loaded / xhr.total) * 100 + '% loaded');
+      },
+      (error) => {
+        console.error('An error happened', error);
+      }
+    );
 
     camera.position.z = 5;
-
-    // Animation loop
-    const animate = () => {
-      requestAnimationFrame(animate);
-      vrHeadset.rotation.x += 0.01;
-      vrHeadset.rotation.y += 0.01;
-      renderer.render(scene, camera);
-    };
-    animate();
 
     // Cleanup on component unmount
     return () => {
@@ -42,7 +59,7 @@ const VrHeadset: React.FC = () => {
     };
   }, []);
 
-  return <div ref={mountRef} style={{ width: '100%', height: '300px' }} />;
+  return <div ref={mountRef} style={{ width: '100%', height: '100px' }} />;
 };
 
 export default VrHeadset;
