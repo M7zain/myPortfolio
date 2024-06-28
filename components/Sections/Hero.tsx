@@ -51,7 +51,7 @@ const Hero = () => {
 
               <div className='flex flex-col md:flex-row items-center text-center mt-10'>
                 <p className='mb-2 md:mb-0'>
-                  Hi! I&aposm Zain, I&aposm a
+                  Hi! I&apos;m Zain, I&apos;m a
                 </p>
                 <div >
                   <FlipWords words={word} />
