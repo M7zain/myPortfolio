@@ -35,6 +35,14 @@ const VrHeadset: React.FC = () => {
     const directionalLight3 = new THREE.DirectionalLight(0xffffff, 1);
     directionalLight.position.set(0, 0, 1).normalize();
     scene.add(directionalLight3);
+
+    const directionalLight4 = new THREE.DirectionalLight(0xffffff, 1);
+    directionalLight.position.set(1, 0, 0).normalize();
+    scene.add(directionalLight4);
+
+    const ambientLight = new THREE.AmbientLight(0xffffff); 
+    scene.add(ambientLight);
+
     // Load the FBX model
     const loader = new FBXLoader();
     loader.load(
@@ -62,7 +70,7 @@ const VrHeadset: React.FC = () => {
           requestAnimationFrame(animate);
 
           // Automatic rotation
-          fbx.rotation.x += 0.01;
+          // fbx.rotation.x += 0.01;
           fbx.rotation.y += 0.01;
 
           renderer.render(scene, camera);
@@ -89,7 +97,7 @@ const VrHeadset: React.FC = () => {
       renderer.setSize(currentMount.clientWidth, currentMount.clientHeight);
     };
 
-    window.addEventListener('resize', handleResize);
+     window.addEventListener('resize', handleResize);
 
     // Cleanup on component unmount
     return () => {
