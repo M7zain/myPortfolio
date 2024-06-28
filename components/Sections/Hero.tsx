@@ -6,6 +6,7 @@ import { FlipWords } from '../ui/flip-words'
 import { TextGenerateEffect } from '../ui/text-generate-effect'
 import { Button } from '../ui/moving-border'
 import Image from 'next/image'
+import { px } from 'framer-motion'
 const Hero = () => {
   
   const word = ["programmer", "Computer-Engineer", "Designer", "Front-end-developer"]
@@ -36,7 +37,7 @@ const Hero = () => {
               {/* Circle */}
               <div className="absolute w-64 h-64 rounded-full bg-white blur-2xl z-10 left-5 top-10"></div>
               {/* Image */}
-              <Image src={profile.src} alt="me" className="absolute w-full h-auto z-20 transform sm:left-5 -top-1/3" />
+              <Image src={profile.src} alt="me" className="absolute w-full h-auto z-20 transform sm:left-5 -top-1/3"  width={400} height={400}/>
               {/* Square */}
               <div className="absolute w-96 h-24 bg-berry-300 blur-lg z-30 top-64 -left-8"></div>
             </div>
@@ -50,7 +51,7 @@ const Hero = () => {
 
               <div className='flex flex-col md:flex-row items-center text-center mt-10'>
                 <p className='mb-2 md:mb-0'>
-                  Hi! I'm Zain, I'm a
+                  "Hi! I&aposm Zain, I&aposm a"
                 </p>
                 <div >
                   <FlipWords words={word} />
