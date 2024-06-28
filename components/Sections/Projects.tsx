@@ -18,6 +18,7 @@ const Projects = () => {
       <div className="grid grid-col-1 md:grid-cols-2 md:grid-rows-2 py-20 gap-14">
         {isMounted && projects.map((project, id) => (
           <PinContainer
+            key={project.id}
             title={project.title}
             href={project.link}
           >
